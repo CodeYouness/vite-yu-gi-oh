@@ -1,27 +1,24 @@
 <script>
 import MainSingleCard from './MainSingleCard.vue';
+import { store } from '../store';
 
 export default {
     data() {
         return {
+            store
         }
     },
     components: {
-        MainSingleCard
+        MainSingleCard,
+        store
     },
-    props: {
-        cardList: {
-            type: Array,
-            required: true
-        }
-    }
 }
 </script>
 
 <template>
     <section class="container bg-white overflow-y-scroll">
         <div class="row">
-            <MainSingleCard v-for="(card,index) in cardList" :key="index" :card="card"/>
+            <MainSingleCard v-for="(card,index) in store.cardList" :key="index" :card="card"/>
         </div>
     </section>
 </template>

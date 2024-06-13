@@ -1,6 +1,7 @@
 <script>
 import MainCardList from './MainCardList.vue'
 import axios from 'axios';
+import { store } from '../store';
 
 export default {
     components: {
@@ -8,7 +9,8 @@ export default {
     },
     data() {
         return {
-            cardList: []
+            store,
+            isLoaded: false
         }
     },
     methods: {
@@ -17,23 +19,30 @@ export default {
             .then((response) => {
                 // handle success
                 console.log(response.data.data);
-                this.cardList = response.data.data
+                this.store.cardList = response.data.data
             })
             .catch(function (error) {
                 // handle error
                 console.log(error);
             })
+        },
+        loadingTime(){
+            setTimeout( () => {
+                this.isLoaded = true
+            }, 3000)
         }
+        
     },
     created(){
         this.getCardList()
+        this.loadingTime()
     }
 }
 </script>
 
 <template>
     <main class="bg-secondary py-3 overflow-y-scroll">
-        <MainCardList :cardList="cardList"/>
+        <MainCardList v-if="isLoaded"/>
     </main>
 </template>
 
