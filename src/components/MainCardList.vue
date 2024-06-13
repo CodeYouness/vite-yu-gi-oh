@@ -19,7 +19,7 @@ export default {
 </script>
 
 <template>
-    <section class="container">
+    <section class="container bg-white overflow-y-scroll">
         <div class="row">
             <MainSingleCard v-for="(card,index) in cardList" :key="index" :card="card"/>
         </div>

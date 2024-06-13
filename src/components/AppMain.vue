@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <main class="bg-secondary">
+    <main class="bg-secondary py-3 overflow-y-scroll">
         <MainCardList :cardList="cardList"/>
     </main>
 </template>
@@ -40,5 +40,9 @@ export default {
 <style lang="scss" scoped>
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
+
+main {
+    height: calc(100vh - 67.35px);
+}
 
 </style>
