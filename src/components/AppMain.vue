@@ -2,10 +2,12 @@
 import MainCardList from './MainCardList.vue'
 import axios from 'axios';
 import { store } from '../store';
+import MainLoader from './MainLoader.vue'
 
 export default {
     components: {
-        MainCardList
+        MainCardList,
+        MainLoader
     },
     data() {
         return {
@@ -43,6 +45,7 @@ export default {
 <template>
     <main class="bg-secondary py-3 overflow-y-scroll">
         <MainCardList v-if="isLoaded"/>
+        <MainLoader v-else/>
     </main>
 </template>
 
