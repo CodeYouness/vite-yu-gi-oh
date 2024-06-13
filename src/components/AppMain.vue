@@ -32,7 +32,7 @@ export default {
 </script>
 
 <template>
-    <main>
+    <main class="bg-secondary">
         <MainCardList :cardList="cardList"/>
     </main>
 </template>
