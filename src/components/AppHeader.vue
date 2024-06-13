@@ -11,10 +11,21 @@ export default {
 <template>
 
 <header>
-    <div>
-        <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/Yu-Gi-Oh%21.png" alt="yugioh logo">
-    </div>
-    <h1>Yu-Gi-Oh Api</h1>
+
+    <nav class="navbar navbar-light">
+        <div class="container-fluid">
+            <a class="navbar-brand fs-3" href="#">
+            <img
+                src="https://upload.wikimedia.org/wikipedia/commons/2/21/Yu-Gi-Oh%21.png"
+                class="me-2"
+                height="20"
+                alt="MDB Logo"
+            />
+            Yu-Gi-Oh Api
+            </a>
+        </div>
+    </nav>
+    
 </header>
 
 </template>
@@ -23,11 +34,4 @@ export default {
 @use '../styles/partials/mixin' as *;
 @use '../styles/partials/variable' as *;
 
-header {
-    display: flex;
-    height: 10vh;
-    img {
-        width: 100%;
-    }
-}
 </style>

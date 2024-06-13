@@ -8,12 +8,19 @@ export default {
     },
     components: {
         MainSingleCard
+    },
+    props: {
+        cardList: {
+            type: Array,
+            required: true
+        }
     }
+
 }
 </script>
 
 <template>
-
+    
 </template>
 
 <style lang="scss" scoped>
