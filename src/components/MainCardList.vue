@@ -6,6 +6,9 @@ export default {
         return {
         }
     },
+    components: {
+        MainSingleCard
+    }
 }
 </script>
 
