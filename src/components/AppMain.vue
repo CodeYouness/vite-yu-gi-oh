@@ -19,7 +19,7 @@ export default {
     },
     methods: {
         getCardList(){
-            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?num=20&offset=0')
+            axios.get('https://db.ygoprodeck.com/api/v7/cardinfo.php?archetype=' + this.store.searchedArchetype)
             .then((response) => {
                 // handle success
                 console.log(response.data.data);
@@ -47,8 +47,9 @@ export default {
                 this.isLoaded = true
             }, 3000)
         },
-        consoletry(){
-            console.log('okay')
+        searchArchetype(){
+            console.log(this.store.searchedArchetype)
+            this.getCardList()
         }
         
     },
@@ -62,7 +63,7 @@ export default {
 
 <template>
     <main class="bg-secondary overflow-y-scroll">
-        <AppSearch v-if="isLoaded" @searched="consoletry"/>
+        <AppSearch v-if="isLoaded" @searched="searchArchetype"/>
         <MainCardList v-if="isLoaded"/>
         <MainLoader v-else/>
     </main>
