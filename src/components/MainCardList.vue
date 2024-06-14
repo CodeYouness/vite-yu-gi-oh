@@ -18,6 +18,9 @@ export default {
 <template>
     <section class="container bg-white overflow-y-scroll">
         <div class="row">
+            <div class="col-12 mt-3">
+                <p class="text-white bg-dark m-0 p-3">Found {{ this.store.cardList.length }} cards</p>
+            </div>
             <MainSingleCard v-for="(card,index) in store.cardList" :key="index" :card="card"/>
         </div>
     </section>

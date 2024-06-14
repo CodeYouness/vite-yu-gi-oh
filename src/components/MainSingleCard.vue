@@ -14,7 +14,7 @@ export default {
 </script>
 
 <template>
-    <div class="col-5th my-3">
+    <div class="col-5th mb-3">
         <section class="card bg-secondary">
             <img :src="card.card_images[0].image_url" class="card-img-top" :alt="card.name">
             <div class="card-body">
